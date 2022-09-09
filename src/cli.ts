@@ -14,7 +14,7 @@ const main = async () => {
   })()
 
   if (input === "" || process.argv.includes("--help")) {
-    process.stdout.write("cat foo.pr.ts | prakaar > foo.ts")
+    process.stdout.write("cat foo.pr.ts | prakaar > foo.ts\n")
     return
   }
 
