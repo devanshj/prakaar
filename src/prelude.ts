@@ -27,10 +27,5 @@ interface B {
 export declare const t: 
   <T>() => Type
 
-export declare const ffi:
-  <I extends string>(identifier: I) =>
-    <T extends Type | ((t: Type) => Type)>() =>
-      T
-
 export declare const p:
   (a: Type, ...fs: ((t: Type) => Type)[]) => Type
