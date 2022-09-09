@@ -1,0 +1,8 @@
+node_modules/
+
+# preconstruct creates these
+/dist
+/cli
+/prelude
+/typescript-compiler
+/typescript-prelude

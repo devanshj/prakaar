@@ -1,0 +1,49 @@
+{
+  "name": "prakaar",
+  "version": "0.0.1",
+  "description": "A type programming language",
+  "main": "dist/prakaar.cjs.js",
+  "bin": "cli/dist/prakaar-cli.cjs.js",
+  "license": "AGPL-3.0",
+  "author": {
+    "name": "Devansh Jethmalani",
+    "email": "jethmalani.devansh@gmail.com"
+  },
+  "readme": "https://github.com/devanshj/prakaar/tree/main/README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devanshj/prakaar.git"
+  },
+  "dependencies": {
+    "@babel/core": "^7.19.0",
+    "zod": "^3.19.0"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.18.6",
+    "@preconstruct/cli": "^2.2.1",
+    "@types/babel__core": "^7.1.19",
+    "typescript": "^4.8.2"
+  },
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts",
+      "cli.ts",
+      "prelude.ts",
+      "typescript-compiler.ts",
+      "typescript-prelude.ts"
+    ]
+  },
+  "scripts": {
+    "build": "preconstruct build",
+    "postbuild": "node postbuild.js"
+  },
+  "files": [
+    "dist",
+    "cli",
+    "prelude",
+    "typescript-compiler",
+    "typescript-prelude",
+    "README.md",
+    "LICENSE"
+  ]
+}
