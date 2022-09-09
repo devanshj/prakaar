@@ -1,6 +1,6 @@
 # Prakaar
 
-Prakaar (hindi for "type") is a type programming language which compiles to and interops with type-level TypeScript. Prakaar itself is also a subset of TypeScript.
+Prakaar (hindi for "type") is a type programming language which compiles to and interops with type-level TypeScript. Prakaar itself is also a subset of TypeScript. See [this twitter thread](https://twitter.com/devanshj__/status/1568309131643355141) for an introduction.
 
 You can install it via `npm i -g prakaar`. And use it via cli with `cat foo.pr.ts | prakaar > foo.ts`. Or programmatically with the `prakaar/typescript-compiler` module.
 
@@ -123,8 +123,13 @@ type Test =
 
 ```ts
 export type omitFunctionKey<t> =
-  { [k in keyof t as (
-      t[k] extends ((...a: never[]) => unknown) ? k : never
+  { [k in (
+      keyof t extends infer p ?
+      p extends unknown ?
+        t[p & keyof t] extends ((...a: never[]) => unknown)
+          ? never
+          : p & keyof t
+        : never : never
     )]:
       t[k]
   }
