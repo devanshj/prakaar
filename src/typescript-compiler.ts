@@ -108,7 +108,7 @@ const preprocess: Preprocess = (n, source) => {
         source.slice(n.start!, n.end!)
         .replace("<", "(")
         .replace(">", ")")
-        .replace("typeof", "")
+        .replace(/typeof/g, "")
       )
     }
   })
